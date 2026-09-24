@@ -52,7 +52,7 @@ library (export)
 ##############*   Prevalence
 windowsFonts(myFont = windowsFont("Arial"))
 
-bar <- read_excel ("E:\\博后课题\\HCV\\绘图\\Clusterbarplot.xlsx",sheet = "Prevalence")
+bar <- read_excel ("E:\\HCV_data\\Clusterbarplot.xlsx",sheet = "Prevalence")
 bar$Sex <- factor (bar$Sex, levels = c('Total','Male','Female'))
 
 barplot <- ggplot (data = bar, aes (x = Sex, y = Prevalence, fill = Sex)) +
@@ -79,7 +79,7 @@ barplot1
 ##############*   Incidence
 windowsFonts(myFont = windowsFont("Arial"))
 
-bar <- read_excel ("E:\\博后课题\\HCV\\绘图\\Clusterbarplot.xlsx",sheet = "Incidence")
+bar <- read_excel ("E:\\HCV_data\\Clusterbarplot.xlsx",sheet = "Incidence")
 bar$Sex <- factor (bar$Sex, levels = c('Total','Male','Female'))
 
 barplot <- ggplot (data = bar, aes (x = Sex, y = Prevalence, fill = Sex)) +
@@ -108,7 +108,7 @@ barplot2
 ##############*  Prevalence
 windowsFonts(myFont = windowsFont("Arial"))
 
-line <- read_excel ("E:/博后课题/HCV/绘图/Lineplot.xlsx",sheet = "Prevalence")
+line <- read_excel ("E:\\HCV_data\\Lineplot.xlsx",sheet = "Prevalence")
 line$Age <- factor (line$Age, levels = c('18-24','25-29','30-34','35-39','40-44','45-49','50-54','55-59','60-64','65-69','≥70'))
 line$Group <- factor (line$Group, levels = c('Total','Male', 'Female'))
 
@@ -144,7 +144,7 @@ lineplot1
 ##############*  Incidence
 windowsFonts(myFont = windowsFont("Arial"))
 
-line <- read_excel ("E:/博后课题/HCV/绘图/Lineplot.xlsx",sheet = "Incidence")
+line <- read_excel ("E:\\HCV_data\\Lineplot.xlsx",sheet = "Incidence")
 line$Age <- factor (line$Age, levels = c('18-24','25-29','30-34','35-39','40-44','45-49','50-54','55-59','60-64','65-69','≥70'))
 line$Group <- factor (line$Group, levels = c('Total','Male', 'Female'))
 
@@ -190,7 +190,7 @@ patchwork
 
 
 ##############********** Figure 3 ********#################
-bar <- read_excel ("E:/博后课题/HCV/绘图/Clusterbarplot-vertical1.xlsx",sheet = "Prevalence-afterimputation") 
+bar <- read_excel ("E:\\HCV_data\\Clusterbarplot-vertical1.xlsx",sheet = "Prevalence-afterimputation") 
 
 
 cairo_pdf("Cluster.pdf", width = 10, height = 11)
@@ -292,11 +292,11 @@ dev.off()
 
 ##############********** Figure 4 ********################
 ##############********** Prevalence
-china_map <- readShapePoly("E:/胆结石/肝纤维化/bou/bou2_4p.shp")
-bianjing <- rgdal::readOGR("E:/胆结石/肝纤维化/SouthSea/bou2_4l.shp")
-l9 <- rgdal::readOGR("E:/胆结石/肝纤维化/SouthSea/九段线.shp")
-province_city <- read_excel ("E:/胆结石/肝纤维化/chinaprovincecity2.xlsx")
-Heatmap_data <- read_excel("E:/博后课题/HCV/绘图/Map.xlsm", sheet = "Prevalence")
+china_map <- readShapePoly("E:\\HCV_data\\bou\\bou2_4p.shp")
+bianjing <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\bou2_4l.shp")
+l9 <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\九段线.shp")
+province_city <- read_excel ("E:\\HCV_data\\chinaprovincecity2.xlsx")
+Heatmap_data <- read_excel("E:\\HCV_data\\Map.xlsm", sheet = "Prevalence")
 quantile (Heatmap_data$Prevalence, c(0, 0.25, 0.50, 0.75, 1))
 china_map@data$NAME <- as.character(((iconv(china_map@data$NAME,"GBK","UTF-8"))))
 x <- china_map@data
@@ -340,11 +340,11 @@ map1
 
 
 ##############********** Incidence
-china_map <- readShapePoly("E:/胆结石/肝纤维化/bou/bou2_4p.shp")
-bianjing <- rgdal::readOGR("E:/胆结石/肝纤维化/SouthSea/bou2_4l.shp")
-l9 <- rgdal::readOGR("E:/胆结石/肝纤维化/SouthSea/九段线.shp")
-province_city <- read_excel ("E:/胆结石/肝纤维化/chinaprovincecity2.xlsx")
-Heatmap_data <- read_excel("E:/博后课题/HCV/绘图/Map.xlsm", sheet = "Incidence")
+china_map <- readShapePoly("E:\\HCV_data\\bou\\bou2_4p.shp")
+bianjing <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\bou2_4l.shp")
+l9 <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\九段线.shp")
+province_city <- read_excel ("E:\\HCV_data\\chinaprovincecity2.xlsx")
+Heatmap_data <- read_excel("E:\\HCV_data\\Map.xlsm", sheet = "Incidence")
 quantile (Heatmap_data$Incidence, c(0, 0.25, 0.50, 0.75, 1))
 china_map@data$NAME <- as.character(((iconv(china_map@data$NAME,"GBK","UTF-8"))))
 x <- china_map@data
@@ -400,7 +400,7 @@ patchwork
 ##############********** Figure 5 ********#################
 ##############*   Poisson regression
 # Read provided sample example data
-forest <- read_excel ("E:/博后课题/HCV/绘图/Forestplot.xlsx",sheet = "Poisson-new")
+forest <- read_excel ("E:\\HCV_data\\Forestplot.xlsx",sheet = "Poisson-new")
 
 cairo_pdf("Forest1.pdf", width = 16.2, height = 8)
 # indent the subgroup if there is a number in the placebo column
@@ -476,7 +476,7 @@ windowsFonts(myFont = windowsFont("Arial"))
 options (scipen = 999)
 
 # City-LEVEL
-bubble <- read_excel ("E:/博后课题/HCV/绘图/Bubbleplot.xlsx",sheet = "GDP")
+bubble <- read_excel ("E:\\HCV_data\\Bubbleplot.xlsx",sheet = "GDP")
 
 model <- lm(pre ~ GDP, data = bubble)
 summary(model) # p < 0.001
@@ -519,7 +519,7 @@ bubbleplot1
 ##############********** Supplementary Figure 3 ********#################
 ##############*   Cox regression
 # Read provided sample example data
-forest <- read_excel ("E:/博后课题/HCV/绘图/Forestplot.xlsx",sheet = "Cox-new")
+forest <- read_excel ("E:\\HCV_data\\Forestplot.xlsx",sheet = "Cox-new")
 
 cairo_pdf("Forest2.pdf", width = 16.2, height = 8)
 # indent the subgroup if there is a number in the placebo column
@@ -588,7 +588,7 @@ dev.off()
 ##############* Access to the health check‑up database is restricted and not available for public use.
 ##############* For transparency, the code for generating this figure is included below:
 
-raw_data <- read_sas("E:\\博后课题\\HCV\\Data\\rcs.sas7bdat") %>% data.table()
+raw_data <- read_sas("E:\\HCV_data\\rcs.sas7bdat") %>% data.table()
 
 cairo_pdf("Curve.pdf", width = 24, height = 6.5)
 
@@ -628,7 +628,7 @@ p1 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.005,
         plot.title = element_text(size=12,color='black')) 
 p1
 
-rt <- read_excel("E:/博后课题/HCV/绘图/risktable.xlsx", sheet = "Age")
+rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "Age")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("18-29 years","30-39 years","40-49 years","50-59 years","60-69 years","≥ 70 years"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p1 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
@@ -669,7 +669,7 @@ p2 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.0025
         plot.title = element_text(size=12,color='black')) 
 p2
 
-rt <- read_excel("E:/博后课题/HCV/绘图/risktable.xlsx", sheet = "Region")
+rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "Region")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("Yes","No"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p2 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
@@ -709,7 +709,7 @@ p3 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.003,
         plot.title = element_text(size=12,color='black')) 
 p3
 
-rt <- read_excel("E:/博后课题/HCV/绘图/risktable.xlsx", sheet = "GDPcat")
+rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "GDPcat")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("Low","High"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p3 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
@@ -748,7 +748,7 @@ p4 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.003,
         plot.title = element_text(size=12,color='black')) 
 p4
 
-rt <- read_excel("E:/博后课题/HCV/绘图/risktable.xlsx", sheet = "Precat1")
+rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "Precat1")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("Low","High"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p4 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
