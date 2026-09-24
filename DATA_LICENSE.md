@@ -1,7 +1,5 @@
-# 数据许可
+All data files in the data/ directory of this repository are released under the CC0 1.0 Universal (Public Domain Dedication).
 
-本仓库中 `data/` 目录下的所有数据文件，均根据 **CC0 1.0 通用（公共领域贡献）** 发布。
+To the greatest extent permitted by law, the authors waive all copyright and related rights in these data. You may copy, modify, and distribute these data for any purpose, including commercial purposes, without asking for permission or providing attribution.
 
-在法律允许的最大范围内，作者放弃对这些数据的所有版权及相关权利。你可以出于任何目的（包括商业目的）复制、修改、分发这些数据，无需请求许可，也无需署名。
-
-CC0 法律文本：https://creativecommons.org/publicdomain/zero/1.0/
+CC0 legal text: https://creativecommons.org/publicdomain/zero/1.0/
