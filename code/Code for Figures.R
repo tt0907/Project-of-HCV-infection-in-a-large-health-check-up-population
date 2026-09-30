@@ -52,7 +52,7 @@ library (export)
 ##############*   Prevalence
 windowsFonts(myFont = windowsFont("Arial"))
 
-bar <- read_excel ("E:\\HCV_data\\Clusterbarplot.xlsx",sheet = "Prevalence")
+bar <- read.csv ("E:\\HCV_data\\Clusterbarplot-prevalence.csv")
 bar$Sex <- factor (bar$Sex, levels = c('Total','Male','Female'))
 
 barplot <- ggplot (data = bar, aes (x = Sex, y = Prevalence, fill = Sex)) +
@@ -79,7 +79,7 @@ barplot1
 ##############*   Incidence
 windowsFonts(myFont = windowsFont("Arial"))
 
-bar <- read_excel ("E:\\HCV_data\\Clusterbarplot.xlsx",sheet = "Incidence")
+bar <- read.csv ("E:\\HCV_data\\Clusterbarplot-incidence.csv")
 bar$Sex <- factor (bar$Sex, levels = c('Total','Male','Female'))
 
 barplot <- ggplot (data = bar, aes (x = Sex, y = Prevalence, fill = Sex)) +
@@ -108,7 +108,7 @@ barplot2
 ##############*  Prevalence
 windowsFonts(myFont = windowsFont("Arial"))
 
-line <- read_excel ("E:\\HCV_data\\Lineplot.xlsx",sheet = "Prevalence")
+line <- read.csv ("E:\\HCV_data\\Lineplot-prevalence.csv")
 line$Age <- factor (line$Age, levels = c('18-24','25-29','30-34','35-39','40-44','45-49','50-54','55-59','60-64','65-69','≥70'))
 line$Group <- factor (line$Group, levels = c('Total','Male', 'Female'))
 
@@ -144,7 +144,7 @@ lineplot1
 ##############*  Incidence
 windowsFonts(myFont = windowsFont("Arial"))
 
-line <- read_excel ("E:\\HCV_data\\Lineplot.xlsx",sheet = "Incidence")
+line <- read.csv ("E:\\HCV_data\\Lineplot-incidence.csv")
 line$Age <- factor (line$Age, levels = c('18-24','25-29','30-34','35-39','40-44','45-49','50-54','55-59','60-64','65-69','≥70'))
 line$Group <- factor (line$Group, levels = c('Total','Male', 'Female'))
 
@@ -190,7 +190,7 @@ patchwork
 
 
 ##############********** Figure 3 ********#################
-bar <- read_excel ("E:\\HCV_data\\Clusterbarplot-vertical1.xlsx",sheet = "Prevalence-afterimputation") 
+bar <- read.csv ("E:\\HCV_data\\Clusterbarplot-vertical1.csv") 
 
 
 cairo_pdf("Cluster.pdf", width = 10, height = 11)
@@ -207,14 +207,14 @@ bar$Group <- factor (bar$Group, levels = c('Geographical and socioeconomic chara
                                            'Normal total bilirubin', 'Elevated total bilirubin',
                                            'Normal platelet count', 'Decreased platelet count',
                                            'Normal albumin', 'Decreased albumin',
-                                           'Without liver fibrosis †', 'With significant liver fibrosis †', 'With advanced liver fibrosis or cirrhosis †', 
+                                           'Without liver fibrosis', 'With significant liver fibrosis', 'With advanced liver fibrosis or cirrhosis', 
                                            'Abnormal thyroid function or antibodies',
                                            'Normal thyroid function', 'With subclinical hypothyroidism', 'With overt hypothyroidism', 'With subclinical hyperthyroidism', 'With overt hyperthyroidism',
                                            'TgAb negative', 'TgAb positive',
                                            'TPOAb negative', 'TPOAb positive',
                                            'Cardio-renal-metabolic components',
                                            'Without diabetes (WHO criteria)', 'With diabetes (WHO criteria)',
-                                           'eGFR ≥ 60 ml/min/1.73 m2','eGFR < 60 ml/min/1.73 m2'))
+                                           'eGFR >= 60 ml/min/1.73 m2','eGFR < 60 ml/min/1.73 m2'))
 bar [,Group:=fct_relevel(bar$Group,rev)]
 levels(bar$Group)
 
@@ -295,8 +295,8 @@ dev.off()
 china_map <- readShapePoly("E:\\HCV_data\\bou\\bou2_4p.shp")
 bianjing <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\bou2_4l.shp")
 l9 <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\九段线.shp")
-province_city <- read_excel ("E:\\HCV_data\\chinaprovincecity2.xlsx")
-Heatmap_data <- read_excel("E:\\HCV_data\\Map.xlsm", sheet = "Prevalence")
+province_city <- read.csv ("E:\\HCV_data\\chinaprovincecity2.csv", fileEncoding = "GBK")
+Heatmap_data <- read.csv ("E:\\HCV_data\\Map-prevalence.csv", fileEncoding = "GBK")
 quantile (Heatmap_data$Prevalence, c(0, 0.25, 0.50, 0.75, 1))
 china_map@data$NAME <- as.character(((iconv(china_map@data$NAME,"GBK","UTF-8"))))
 x <- china_map@data
@@ -343,8 +343,8 @@ map1
 china_map <- readShapePoly("E:\\HCV_data\\bou\\bou2_4p.shp")
 bianjing <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\bou2_4l.shp")
 l9 <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\九段线.shp")
-province_city <- read_excel ("E:\\HCV_data\\chinaprovincecity2.xlsx")
-Heatmap_data <- read_excel("E:\\HCV_data\\Map.xlsm", sheet = "Incidence")
+province_city <- read.csv ("E:\\HCV_data\\chinaprovincecity2.csv", fileEncoding = "GBK")
+Heatmap_data <- read.csv ("E:\\HCV_data\\Map-incidence.csv", fileEncoding = "GBK")
 quantile (Heatmap_data$Incidence, c(0, 0.25, 0.50, 0.75, 1))
 china_map@data$NAME <- as.character(((iconv(china_map@data$NAME,"GBK","UTF-8"))))
 x <- china_map@data
@@ -400,7 +400,7 @@ patchwork
 ##############********** Figure 5 ********#################
 ##############*   Poisson regression
 # Read provided sample example data
-forest <- read_excel ("E:\\HCV_data\\Forestplot.xlsx",sheet = "Poisson-new")
+forest <- read.csv ("E:\\HCV_data\\Forestplot-poisson.csv", check.names = FALSE, fileEncoding = "GBK")
 
 cairo_pdf("Forest1.pdf", width = 16.2, height = 8)
 # indent the subgroup if there is a number in the placebo column
@@ -476,7 +476,7 @@ windowsFonts(myFont = windowsFont("Arial"))
 options (scipen = 999)
 
 # City-LEVEL
-bubble <- read_excel ("E:\\HCV_data\\Bubbleplot.xlsx",sheet = "GDP")
+bubble <- read.csv ("E:\\HCV_data\\Bubbleplot.csv", fileEncoding = "GBK")
 
 model <- lm(pre ~ GDP, data = bubble)
 summary(model) # p < 0.001
@@ -519,7 +519,7 @@ bubbleplot1
 ##############********** Supplementary Figure 3 ********#################
 ##############*   Cox regression
 # Read provided sample example data
-forest <- read_excel ("E:\\HCV_data\\Forestplot.xlsx",sheet = "Cox-new")
+forest <- read.csv ("E:\\HCV_data\\Forestplot-cox.csv", check.names = FALSE, fileEncoding = "GBK")
 
 cairo_pdf("Forest2.pdf", width = 16.2, height = 8)
 # indent the subgroup if there is a number in the placebo column
@@ -628,7 +628,7 @@ p1 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.005,
         plot.title = element_text(size=12,color='black')) 
 p1
 
-rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "Age")
+rt <- read.csv ("E:\\HCV_data\\risktable-age.csv")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("18-29 years","30-39 years","40-49 years","50-59 years","60-69 years","≥ 70 years"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p1 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
@@ -669,7 +669,8 @@ p2 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.0025
         plot.title = element_text(size=12,color='black')) 
 p2
 
-rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "Region")
+
+rt <- read.csv ("E:\\HCV_data\\risktable-region.csv")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("Yes","No"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p2 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
@@ -709,7 +710,8 @@ p3 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.003,
         plot.title = element_text(size=12,color='black')) 
 p3
 
-rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "GDPcat")
+
+rt <- read.csv ("E:\\HCV_data\\risktable-GDPcat.csv")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("Low","High"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p3 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
@@ -748,7 +750,8 @@ p4 <- p + theme_classic()+scale_y_continuous(expand = c(0,0),breaks=c(0.0,0.003,
         plot.title = element_text(size=12,color='black')) 
 p4
 
-rt <- read_excel("E:\\HCV_data\\risktable.xlsx", sheet = "Precat1")
+
+rt <- read.csv ("E:\\HCV_data\\risktable-Precat1.csv")
 rt <- rt[, c("year0", "year1", "year2", "year3","year4","year5","year6")]
 rt.p <- ggtexttable(rt, rows = c("Low","High"), cols = NULL, theme = ttheme("blank", base_size = 12))
 rt.p4 <- rt.p %>% tab_add_title(text = "Number at risk", face = "plain", size=12) 
