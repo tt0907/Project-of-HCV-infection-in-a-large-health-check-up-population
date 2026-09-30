@@ -1,3 +1,5 @@
+License: All data files in this repository are released under the CC0 1.0 Universal (Public Domain Dedication) license. See the LICENSE file for details.
+
 # HCV infection in a large health check-up population
 
 This repository contains the analysis code and data for the study “Prevalence and incidence of hepatitis C virus infection in a large health check-up population in China: a cross-sectional and longitudinal study of 1.6 million adults” (Sailimai et al, GIGASCIENCE 2026).
@@ -44,6 +46,5 @@ The main results are provided as data files and are also presented in the accomp
    (generated using `Map.xlsm`, and `bou` and `SouthSea` files in `data` folder)
 - **Figure 5**: Incidence rate of HCV seroconversion and the potential risk factors associated with the incidence of HCV seroconversion.
   (generated using `Forestplot.xlsx` file in `data` folder)
-
 
 
