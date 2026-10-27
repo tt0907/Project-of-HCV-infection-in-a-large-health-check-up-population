@@ -9,10 +9,6 @@ The study aimed to estimate the prevalence of anti-HCV and the incidence rate of
 # Prerequisites
 
 - R (version ≥ 3.6.2). The script will automatically install the required packages if they are not already installed.
-  Before running the analysis scripts, please ensure that the following packages are installed and loaded:
-  "ggbreak", "ggplot2", "plyr", "sp", "maptools", "Cairo", "RColorBrewer", "openxlsx", "readxl", "colorspace", "epitools", "tableone", "haven", "tidyverse",
-  "data.table", "gtsummary", "survminer", "dplyr", "lattice", "rgdal", "ggsci", "ggsignif", "scales", "grid", "ggpubr", "ggh4x", "robustbase", "patchwork",
-  "RImagePalette", "jpeg", "rms", "mgcv", "lme4", "ggridges", "gghalves", "grDevices", "ggbeeswarm", "forestploter", "flextable", "export".
 - Access to the relevant data files. The data files should be placed in a specified directory. In the current R script, the data path is set to `E:\\HCV_data`. Please modify the path variable in the script to match your local directory.
 - After setting the correct data path, the script can be run directly using `Rscript`.
 
