@@ -1,4 +1,12 @@
 rm (list = ls())
+
+install.packages(c("ggbreak", "ggplot2", "plyr", "sp", "maptools", "Cairo", "RColorBrewer", "openxlsx", 
+                   "readxl", "colorspace", "epitools", "tableone", "haven", "tidyverse", "data.table", 
+                   "gtsummary", "survminer", "dplyr", "lattice", "rgdal", "ggsci", "ggsignif", "scales", 
+                   "grid", "ggpubr", "ggh4x", "robustbase", "patchwork", "RImagePalette", "jpeg", "rms", 
+                   "mgcv", "lme4", "ggridges", "gghalves", "grDevices", "ggbeeswarm", "forestploter", 
+                   "flextable", "export"))
+
 library (ggbreak)
 library (ggplot2)
 library (plyr)
