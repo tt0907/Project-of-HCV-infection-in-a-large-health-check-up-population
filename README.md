@@ -1,4 +1,16 @@
-License: All data files in this repository are released under the CC0 1.0 Universal (Public Domain Dedication) license. See the LICENSE file for details.
+# Licensing
+
+This repository uses separate licensing for software code and research data to ensure proper legal compliance and open science practices.
+
+## 1. Software Code
+All source code and scripts included in this repository are licensed under the **MIT License**. 
+
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, subject to the conditions outlined in the license. See the [LICENSE](./code/LICENSE) file located in the `/code` directory for the full text.
+
+## 2. Research Data
+All data included in this repository is dedicated to the public domain under the **CC0 1.0 Universal (CC0 1.0) Public Domain Dedication**.
+
+This means you can copy, modify, distribute, and use the data for any purpose, including commercial applications, without asking permission. See the [LICENSE](./data/LICENSE) file located in the `/data` directory for the standard declaration.
 
 # HCV infection in a large health check-up population
 
