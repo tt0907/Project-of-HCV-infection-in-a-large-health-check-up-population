@@ -302,7 +302,6 @@ dev.off()
 ##############********** Prevalence
 china_map <- readShapePoly("E:\\HCV_data\\bou\\bou2_4p.shp")
 bianjing <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\bou2_4l.shp")
-l9 <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\九段线.shp")
 province_city <- read.csv ("E:\\HCV_data\\chinaprovincecity2.csv", fileEncoding = "GBK")
 Heatmap_data <- read.csv ("E:\\HCV_data\\Map-prevalence.csv", fileEncoding = "GBK")
 quantile (Heatmap_data$Prevalence, c(0, 0.25, 0.50, 0.75, 1))
@@ -350,7 +349,6 @@ map1
 ##############********** Incidence
 china_map <- readShapePoly("E:\\HCV_data\\bou\\bou2_4p.shp")
 bianjing <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\bou2_4l.shp")
-l9 <- rgdal::readOGR("E:\\HCV_data\\SouthSea\\九段线.shp")
 province_city <- read.csv ("E:\\HCV_data\\chinaprovincecity2.csv", fileEncoding = "GBK")
 Heatmap_data <- read.csv ("E:\\HCV_data\\Map-incidence.csv", fileEncoding = "GBK")
 quantile (Heatmap_data$Incidence, c(0, 0.25, 0.50, 0.75, 1))
