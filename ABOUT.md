@@ -6,6 +6,8 @@ The project aims to estimate the prevalence of anti-HCV and the incidence rate o
 
 # Maintenance
 To ensure the long-term maintenance, sustainability, and reproducibility of this repository, it is actively maintained by:
+
 Sailimai Man (Lead Maintainer) - [Email Address: sailimai.man@meinianresearch.com]
 Yining Zu (Co-Maintainer) - [Email Address: zuyining@meinianresearch.com]
+
 If you encounter any bugs, or have questions about the code, please contact the maintainers directly.
